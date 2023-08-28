@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Thuongne.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BestSeller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitslnStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantitySold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Star)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Screen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OperatingSystem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RearCam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FrontCam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemoryStick)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatteryCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Method)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BestSeller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitslnStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantitySold)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Star)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Screen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatingSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RearCam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrontCam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemoryStick)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatteryCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cat.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Method.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

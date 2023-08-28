@@ -1,0 +1,248 @@
+﻿@model IEnumerable<Thuongne.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-action="Detail_products" >
+<!-- Products Start -->
+<div class="container pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Featured products</span></h2>
+    </div>
+    <div class="row pb-3">
+        @foreach(var item in Model){
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4" data-index="1">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        @foreach (var t in item.Thumbnails){
+                           
+                    <img class="product-thumbnail img-fluid w-100" src="~/img/@t.Thumb" alt="">
+                    break;
+                        }
+                    </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">@item.ProName </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price" name="quantity">$@item.Price</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="@Url.Action("Detail_products", "Home", new { id = item.Id})" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            @*                    asp-controller="Home" asp-action="Detail_products" asp-route-id="@item.Id"*@
+                            <a asp-controller="Home" asp-action="Cart_products" asp-route-id="@item.Id" type="button" class="btn btn-sm  text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>
+</div>
+</form>
+<!-- Products End -->
+<!-- Subscribe Start -->
+<div class="subcribe bg-gray-900">
+    <div class="container my-5">
+        <div class="row justify-content-md-center py-5 ">
+            <div class="col-md-6 col-12 py-5">
+                <div class="text-center mb-2 pb-2">
+                    <h2 class=" text-light px-5 mb-3">REGISTER</h2>
+                    <p class="text-light">Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
+                </div>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-white p-4" placeholder="Email...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-4 text-light">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Subscribe End -->
+<!-- Products Start -->
+<div class="container pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Featured products</span></h2>
+    </div>
+    <div class="row  pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="9">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-83919-s-612-nam-1-600x600-removebg-preview.png" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="10">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/frederique-constant-fc-318mpwn3b4-nu-300x300.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="11">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-818-s-656-nu-1-600x600.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="12">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-878-srg-657-nam-1-600x600.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="13">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-83919-s-612-nam-1-600x600-removebg-preview.png" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="14">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/frederique-constant-fc-318mpwn3b4-nu-300x300.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="15">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-818-s-656-nu-1-600x600.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card product-item border-0 mb-4" data-index="16">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="product-thumbnail img-fluid w-100" src="img/titoni-878-srg-657-nam-1-600x600.jpg" alt="">
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="product-name text-truncate mb-3">Titoni watch 40 mm 83919 S-612 </h6>
+                    <div class="d-flex justify-content-center">
+                        <h6 class="product-price">$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+<!-- Vendor Start -->
+<div class="container py-5">
+    <div class="row ">
+        <div class="col">
+            <div class="owl-carousel vendor-carousel">
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-1.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-2.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-3.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-4.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-5.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-6.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-7.jpg" alt="">
+                </div>
+                <div class="vendor-item border p-4">
+                    <img src="img/vendor-8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Vendor End -->

@@ -1,0 +1,14 @@
+﻿@model Thuongne.Models.Account
+@{
+	Layout = null;
+}
+
+<form method="post" asp-action="Login" asp-controller="Accounts">
+<label>Tai khoan</label>
+<input type="Text" name="user"  />
+<br />
+<label>Mat khau</label>
+<input type="password" name="password" />
+<input type="submit" value="submit" />
+	
+</form>
